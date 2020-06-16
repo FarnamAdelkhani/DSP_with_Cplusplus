@@ -1,11 +1,11 @@
 /*
-**   Sample Audio Kernels Represented as ASCII
+** Sample Signal Kernels in ASCII Format
 
 *** Kernels:
 ** low_pass_filter[30]
 
 *** Audio Samples:
-** double sample_input_signal[]
+** violin_sample_44KHz[360]
 */
 
 

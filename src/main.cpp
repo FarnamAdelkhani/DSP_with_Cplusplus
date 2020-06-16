@@ -6,7 +6,7 @@
 #include <cmath>
 
 #define FILTER_LENGTH 30
-#define SIGNAL_LENGTH 4000
+#define SIGNAL_LENGTH 360
 
 double output_signal[FILTER_LENGTH + SIGNAL_LENGTH];
 double filter[FILTER_LENGTH];
@@ -14,12 +14,8 @@ double filter[FILTER_LENGTH];
 extern double violin_sample_44KHz[360];
 extern double low_pass_filter[30];
 
-void convolution(
-	double* impulse_response,    //kernel
-	double* input_array,         //input signal
-	double* output_array,        //output signal
-	int input_signal_length,     //length of input
-	int impulse_response_length); //length of filter kernel
+//Identifier
+void convolution(double* impulse_response, double* input_array, double* output_array, int input_signal_length, int impulse_response_length);
 
 int main(int argc, char**)
 {
