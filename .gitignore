@@ -33,3 +33,11 @@
 DSP_with_Cplusplus.vcxproj
 DSP_with_Cplusplus.vcxproj.filters
 DSP_with_Cplusplus.vcxproj.user
+*.sln
+*.suo
+*.db
+*.db-shm
+*.db-wal
+*.opendb
+*.ipch
+bin/
