@@ -1,14 +1,8 @@
 #include <cmath>
 #include "signal_statistics.h"
 
-/**
- * @brief Pointer to signal source array.
- *
- * @param[in] _source_signal Pointer to signal source array.
- * @param[in] _signal_length Length of course array.
- *
- * @return none
- */
+#include <Eigen/Dense>
+
 signal_statistics::signal_statistics(double* _source_signal, int _signal_length)
 {
 	source_signal = _source_signal;
@@ -16,17 +10,9 @@ signal_statistics::signal_statistics(double* _source_signal, int _signal_length)
 };
 
 
-/**
- * @brief Calculate signal mean.
- *
- * @param[in] _source_signal Pointer to signal source array.
- * @param[in] _signal_length Length of course array.
- *
- * @return Signal mean
- */
 double signal_statistics::calc_signal_mean()
 {
-	double mean = 0.0;
+	double mean;
 
 	//Sum up all source signal values
 	for (int i = 0; i < signal_length; i++)
@@ -38,4 +24,30 @@ double signal_statistics::calc_signal_mean()
 	mean = mean / signal_length;
 
 	return mean;
+}
+
+double signal_statistics::calc_signal_variance()
+{
+	double variance;
+	double signal_mean = calc_signal_mean();
+
+	for (int i = 0; i < signal_length; i++)
+	{
+		variance = variance + pow((source_signal[i] - signal_mean), 2);
+	}
+
+	variance = variance / (signal_length - 1);
+	return variance;
+
+};
+
+double signal_statistics::calc_signal_std() 
+{
+
+	double sig_variance = calc_signal_variance();
+
+	//Standard deviation is the square root of the variance.
+	double std = sqrt(sig_variance);
+
+	return std;
 }

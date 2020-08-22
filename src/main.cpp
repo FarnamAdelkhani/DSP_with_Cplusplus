@@ -58,29 +58,3 @@ int main(int argc, char**)
 	return 0;
 
 }
-
-//Basic Convolution:
-void convolution(
-	double* impulse_response,    //kernel
-	double* input_array,         //input signal
-	double* output_array,        //output signal
-	int input_signal_length,     //length of input
-	int impulse_response_length) //length of filter kernel
-{
-	//Fill the signal with 0s
-	int i, j;
-	for (int i = 0; i < (input_signal_length + impulse_response_length); i++)
-	{
-		output_array[i] = 0;
-	}
-
-	//Convolution:
-	for (i = 0; i < input_signal_length; i++)
-	{
-		for (j = 0; j < impulse_response_length; j++)
-		{
-			//Convolution Sum Equation:
-			output_array[i + j] = output_array[i + j] + input_array[i] * impulse_response[j];
-		}
-	}
-}
