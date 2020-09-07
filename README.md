@@ -33,6 +33,8 @@ For **real-time** processing:
 
 - The algorithm must accept a new input sample, do the processing, then have the output sample(s) available before the next input arrives. This will prevent clicks, pops, glitches, and noise.  
 
+---
+
 ### Conventions:  
 **x(n)** is always the **input** sequence  
 
@@ -61,6 +63,8 @@ For **real-time** processing:
 - Like read, write, or sendto.    
 
   
+
+---
 
 **Why use a compressor?**  
 Compression can be used to subtly massage a track to make it more natural sounding and intelligible without adding distortion, resulting in a song that's more “comfortable” to listen to. Additionally, many compressors — both hardware and software — will have a signature sound that can be used to inject wonderful coloration and tone into otherwise lifeless tracks. 
@@ -92,6 +96,8 @@ The look-ahead function duplicates the incoming signal, which is then delayed (b
 4. Add a compressor on the original track (must have the ability to use a side-chain)
 5. Create a send from the duplicate track and use it as the key on the compressor from the original track. (Note that on some compressors, you have to activate the key detector so that the compressor looks at that signal)
 6. Adjust the Parameters
+
+---
 
 **4 Steps to implementing a look-ahead compressor (2 steps are the same as a regular compressor.)**
 
