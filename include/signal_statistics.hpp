@@ -1,6 +1,14 @@
 #ifndef SIGNAL_STATISTICS_H
 #define SIGNAL_STATISTICS_H
 
+/// @brief Function to determine if processor is set to little or big endianness.
+	///        Higher memory   ----->
+	///    [ 0x01 | 0x00 | 0x00 | 0x00 ] <- Little endian
+	///    [ 0x00 | 0x00 | 0x00 | 0x01 ] <- Big endian
+	/// This function checks to see if the int 1 is stored in the lowest memory address.
+void find_cpu_endianness();
+
+
 class signal_statistics 
 {
 private:
