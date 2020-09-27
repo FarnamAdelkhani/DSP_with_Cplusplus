@@ -1,0 +1,3 @@
+[submodule "WAV_to_DAT_converter"]
+	path = WAV_to_DAT_converter
+	url = https://github.com/FarnamAdelkhani/WAV_to_DAT_converter
